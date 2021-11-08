@@ -102,6 +102,19 @@ BinTree* MergeBinTrees(BinTree *t, BinTree *u) {
     return z;
 }
 
+void PrintNode(BinTreeNode *u) {
+    for(int i = 0; i < GetLevel(u); i++) {
+        printf("\t");
+    }
+
+    if(u->parent == NULL) {
+        printf("%d[r]\n", u->value);
+    }
+    else {
+        printf("%d[%d](%s)\n", u->value, u->parent->value, u->parent->sx == u ? "sx" : "dx");
+    }
+}
+
 void VisitBinTreeNodes(BinTreeNode *u, int mode) {
     if(mode == PREVISIT) {
         PrintNode(u);
@@ -146,17 +159,4 @@ void PrintBinTree(BinTree *t) {
     VisitBinTreeNodes(t->root, INVISIT);
 
     printf("\n\n");
-}
-
-void PrintNode(BinTreeNode *u) {
-    for(int i = 0; i < GetLevel(u); i++) {
-        printf("\t");
-    }
-
-    if(u->parent == NULL) {
-        printf("%d[r]\n", u->value);
-    }
-    else {
-        printf("%d[%d]\n", u->value, u->parent->value);
-    }
 }

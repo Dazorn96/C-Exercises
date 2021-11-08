@@ -195,6 +195,19 @@ void AddSubtree(TreeNode *p, TreeNode *s, Tree *t) {
     free(t);
 }
 
+void PrintNode(TreeNode *u) {
+    for(int i = 0; i < GetLevel(u); i++) {
+        printf("\t");
+    }
+
+    if(u->root == 1) {
+        printf("%d[r]\n", u->value);
+    }
+    else {
+        printf("%d[%d]\n", u->value, u->parent->value);
+    }
+}
+
 void PreVisitTreeNodes(TreeNode *u) {
     PrintNode(u);
 
@@ -267,17 +280,4 @@ void PrintTree(Tree *t) {
     InVisitTreeNodes(t->root, 1);
 
     printf("\n\n");
-}
-
-void PrintNode(TreeNode *u) {
-    for(int i = 0; i < GetLevel(u); i++) {
-        printf("\t");
-    }
-
-    if(u->root == 1) {
-        printf("%d[r]\n", u->value);
-    }
-    else {
-        printf("%d[%d]\n", u->value, u->parent->value);
-    }
 }
