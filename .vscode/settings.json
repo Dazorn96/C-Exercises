@@ -3,6 +3,7 @@
         "stdio.h": "c",
         "lists.h": "c",
         "queues.h": "c",
-        "limits": "cpp"
+        "limits": "cpp",
+        "type_traits": "cpp"
     }
 }

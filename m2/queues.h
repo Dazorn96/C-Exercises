@@ -45,6 +45,29 @@ short IsEmptyQueue(Queue *q) {
 }
 
 /*
+ * IsInQueue
+ * --------------------
+ * What it does:
+ * checks if a value is in the queue
+ *
+ * Requires:
+ * q = a pointer to a queue
+ * v = an integer value to check
+ * 
+ * Returns:
+ * a boolean value, 1 if value is in queue else 0
+ */
+short IsInQueue(Queue *q, int v) {
+    for(int i = 0; i < q->size; i++) {
+        if(q->elements[i] == v) {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
+/*
  * ReadFromQueue
  * --------------------
  * What it does:
